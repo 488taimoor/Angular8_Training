@@ -1,0 +1,66 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+<label>Full Name</label>
+<input type="text" formControlName="fullName" />
+<!-- validation helping message for name -->
+<br/>
+<div *ngIf="employeeForm.get('fullName').invalid && (employeeForm.get('fullName').touched || employeeForm.get('fullName').dirty)" >
+    <span style="color: red" *ngIf="employeeForm.get('fullName').errors.required">
+        enter full name
+    </span>
+    <span style="color: red" *ngIf="employeeForm.get('fullName').errors.minlength || employeeForm.get('fullName').errors.maxlength" >
+            min character are 2 and max are 10
+    </span>
+</div>
+
+<br/>
+<label>Email</label>
+<input type="text" formControlName="email" />
+<!-- validation helping message for Email -->
+<div *ngIf="employeeForm.get('email').invalid && (employeeForm.get('email').touched || employeeForm.get('email').dirty)" >
+        <span style="color: red" *ngIf="employeeForm.get('email').errors.required">
+            this field is required
+        </span>
+        <span style="color: red" *ngIf="employeeForm.get('email').errors.email" >
+                enter a correct Email
+        </span>
+    </div>
+
+
+    <div formGroupName="skills">
+        <label>Skill Name</label>
+        <input type="text" formControlName="skillName" />
+        <label>Experience</label>
+        <input type="text" formControlName="experienceInYears" />
+        <label>Proficiency</label>
+        <input type="text" formControlName="proficiency" />
+    </div>
+    <button type="submit">Handle Submit</button>
+    <button type="button" (click)="loadData()">loadData</button>
+</form>
+
+<table border="1">
+    <tr>
+      <th style="padding: 10px">FormGroup</th>
+      <th style="padding: 10px">FormControl (fullName)</th>
+    </tr>
+    <tr>
+      <td style="padding: 10px">
+        touched : {{ employeeForm.touched }}
+        <br/> dirty : {{ employeeForm.dirty }}
+        <br/> valid : {{ employeeForm.valid }}
+        <br/> Form Values : {{employeeForm.value | json}}
+      </td>
+      <td style="padding: 10px">
+        touched : {{ employeeForm.get('fullName').touched }}
+        <br/> dirty : {{ employeeForm.get('fullName').dirty }}
+  
+   
+        <br/> valid : {{ employeeForm.get('fullName').valid }}
+        <br/> Errors : {{ employeeForm.get('fullName').errors.required }}
+        <br /> minLength : {{employeeForm.get('fullName').errors.minlength}}
+        <br/> FullName Value : {{employeeForm.get('fullName').value}}
+        <br/>
+        <br/> for email: {{employeeForm.get('email').errors.email}}
+      </td>
+    </tr>
+  </table>

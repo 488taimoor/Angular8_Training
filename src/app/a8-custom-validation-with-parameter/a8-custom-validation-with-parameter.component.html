@@ -1,0 +1,88 @@
+<p>a8-custom-validation-with-parameter works!</p>
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <label>Full Name</label>
+    <input type="text" formControlName="fullName" (blur)="logValidationErrors()"/>
+    <!-- validation helping message for name -->
+    <br/>
+    <span style="color: red">
+        {{formErrors.fullName}}
+        </span>
+    
+    <br/>
+    <label>Email</label>
+    <input type="text" formControlName="email" (blur)="logValidationErrors()"/>
+    <!-- validation helping message for Email -->
+            <span style="color: red">
+            {{formErrors.email}}
+            </span>
+        
+        <!-- radio buttons -->
+        <br/>
+            <label>Contact Preference</label>
+            <div >
+              <label >
+                <input type="radio" value="required"  formControlName="contactPreference" >phone required
+              </label>
+              <label >
+                <input type="radio" value="notrequired"  formControlName="contactPreference">Phone notrequired
+              </label>
+            </div>
+          
+          
+        <label>phone</label>
+        <input type="text" formControlName="phone"  (blur)="logValidationErrors()"/>
+        <span style="color: red">
+            {{formErrors.phone}}
+            </span>
+        
+    
+        <div formGroupName="skills">
+            <label>Skill Name</label>
+            <input type="text" formControlName="skillName" (blur)="logValidationErrors()" />
+            <span style="color: red">
+                {{formErrors.skillName}}
+                </span>
+            <label>Experience</label>
+            <input type="text" formControlName="experienceInYears"  (blur)="logValidationErrors()"/>
+            <span style="color: red">
+                {{formErrors.experienceInYears}}
+                </span>
+            <label>Proficiency</label>
+            <input type="text" formControlName="proficiency"  (blur)="logValidationErrors()"/>
+            <span style="color: red">
+                {{formErrors.proficiency}}
+                </span>
+        </div>
+        <button type="submit">Handle Submit</button>
+        <button type="button" (click)="loadData()">loadData</button>
+    </form>
+    
+
+
+
+    <table border="1">
+        <tr>
+          <th style="padding: 10px">FormGroup</th>
+          <th style="padding: 10px">FormControl (fullName)</th>
+        </tr>
+        <tr>
+          <td style="padding: 10px">
+            touched : {{ employeeForm.touched }}
+            <br/> dirty : {{ employeeForm.dirty }}
+            <br/> valid : {{ employeeForm.valid }}
+            <br/> Form Values : {{employeeForm.value | json}}
+          </td>
+          <td style="padding: 10px">
+            touched : {{ employeeForm.get('fullName').touched }}
+            <br/> dirty : {{ employeeForm.get('fullName').dirty }}
+      
+       
+            <br/> valid : {{ employeeForm.get('fullName').valid }}
+            <br/> Errors : {{ employeeForm.get('fullName').errors.required }}
+            <br /> minLength : {{employeeForm.get('fullName').errors.minlength}}
+            <br/> FullName Value : {{employeeForm.get('fullName').value}}
+            <br/>
+            <br/> for email: {{employeeForm.get('email').errors.email}}
+          </td>
+        </tr>
+      </table>

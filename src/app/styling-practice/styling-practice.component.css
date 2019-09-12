@@ -1,0 +1,45 @@
+.div{
+    background-color: gold;
+    height: 200px;
+    /* width: 200px; */
+    border-style:solid dotted double dashed;
+    border-width: 2px 3px 4px 5px;
+    border-color: red black pink green;
+    padding: 20px;
+    display: inline-block;
+    /* margin: 20px;  */
+    /*it applies on all sides*/
+    /* margin: 20px 20px; */
+    /*1st top-bottom 2nd right-left*/
+    /* margin: 20px 20px 20px; */
+    /*1st top 2nd right-left 3rd bottom*/
+    /* margin: 20px 20px 20px 20px; */
+    /*top right bottom left*/
+
+    /* the same strategy applies on padding, border */
+}
+.div1{
+    position: relative;
+    /* top: 20px; */
+    left: 20px;
+    width: 300px;
+}
+
+.div2{
+    position: relative;
+    top: 20px;
+    left: 40px;
+    right: 20px;
+    width: 200px;
+    /* top: 20px; */
+    background-color: aqua;
+}
+
+.div2 .innerDiv{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 50px;
+    width: 50px;
+    background-color: red;
+}

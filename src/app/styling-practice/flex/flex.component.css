@@ -1,0 +1,46 @@
+/* .container{
+    width: 100vw;
+    background-color: gold;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.container .div{
+    display: inline-block;
+    height: 24vh;
+    width: 25vw;
+    background-color: black;
+    margin:5px;
+} */
+.container{
+    /* height: 50vh; */
+    width: 100vw;
+    background-color: gold;
+    display: flex;/* flex me child parent div se bahir nahi jaty*/
+    flex-wrap: wrap;
+    align-items: center;/* center vertically when flex-direction is row and vise versa.*/
+    justify-content: center;/* center horizontally when flex-direction is row and vise versa*/
+}
+
+.container .div{
+    height: 24vh; 
+    width: 24vw;
+    background-color: black;
+    margin:5px;
+}
+.container2{
+    position: relative;
+    height: 50vh;
+    width: 100vw;
+    background-color: red;
+}
+
+.container2 .div2{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*transform se wo apni div k size ka utna % move kerta h.*/
+    height: 10vh; 
+    width: 10vw;
+    background-color: black;
+}

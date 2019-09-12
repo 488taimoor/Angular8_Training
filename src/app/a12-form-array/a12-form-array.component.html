@@ -1,0 +1,51 @@
+<p>a12-form-array works!</p>
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <label>Full Name</label>
+    <input type="text" formControlName="fullName" (blur)="logValidationErrors()" />
+    <!-- validation helping message for name -->
+    <span style="color: red">
+        {{formErrors.fullName}}
+    </span>
+    <br />
+    <label>Email</label>
+    <input type="text" formControlName="email" (blur)="logValidationErrors()" />
+    <!-- validation helping message for Email -->
+    <span style="color: red">
+        {{formErrors.email}}
+    </span>
+<br>
+<div formGroupName="passwordGroup">
+<label>Password</label>
+    <input type="password" formControlName="password" (blur)="logValidationErrors()" />
+    <!-- validation helping message for Email -->
+    <span style="color: red">
+        {{formErrors.password}}
+    </span>
+<br>
+<label>Confirm Password</label>
+    <input type="password" formControlName="confirmPassword" (blur)="logValidationErrors()" />
+    <!-- validation helping message for Email -->
+    <span style="color: red">
+        {{formErrors.confirmPassword ? formErrors.confirmPassword : formErrors.passwordGroup}}
+
+    </span>
+<br>
+</div>
+
+<br>
+<button (click)="addSkillButtonClick()" [disabled]="employeeForm.get('skills').invalid">Add Skill</button>
+<div formArrayName="skills" *ngFor="let skill of employeeForm.get('skills').controls, let i = index">
+    <div [formGroupName]="i" style="border: 1px solid; width:25vw; height: 10vh;">
+        <label [attr.for]="'skillName'+i">Skill Name</label>
+    <input type="text" formControlName="skillName" [id]="'skillName'+i" (blur)="logValidationErrors()" />
+    <br>
+    <span style="color: red" *ngIf="skill.get('skillName').errors?.required &&
+    skill.get('skillName').touched">
+        skill name is required
+
+    </span>
+    <button (click)="removeSkillButtonClick(i)" *ngIf="employeeForm.get('skills').length>1" >remove</button>
+    </div>
+</div>
+    <button [disabled]="employeeForm.invalid" type="submit">Handle Submit</button>
+</form>

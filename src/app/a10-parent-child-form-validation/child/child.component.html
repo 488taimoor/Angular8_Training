@@ -1,0 +1,63 @@
+<div class="container align-content-center">
+    <div class="jumbotron" style="background-color:white">
+        <h1>Welcome to ToGee</h1>
+        <p>Login to your toGee account. We'll never share your email with anyone
+            else.</p>
+        <form [formGroup]="userForm" (ngSubmit)="handleSubmit()">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control " formControlName="email" (blur)="logValidationErrors()" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+                <!-- validation helping message for Email -->
+                <small style="color: red">
+                    {{formErrors.email}}
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" formControlName="password" (blur)="logValidationErrors()" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <small style="color: red">
+                    {{formErrors.password}}
+                </small>
+                <small style="color: red">
+                    {{formErrors.errorMessage}}
+                </small>
+            </div>
+            <div formGroupName="phoneNumbers">
+            <div class="form-group">
+                <label for="exampleInputEmail1">phone1</label>
+                <input type="text" class="form-control " formControlName="phone1" (blur)="logValidationErrors()" id="phone1" aria-describedby="phone1help"
+                    placeholder="Enter phone1">
+                <!-- validation helping message for Email -->
+                <small style="color: red">
+                    {{formErrors.phone1}}
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">phone2</label>
+                <input type="email" class="form-control " formControlName="phone2" (blur)="logValidationErrors()" id="phone2" aria-describedby="emailHelp"
+                    placeholder="Enter phone2">
+                <!-- validation helping message for Email -->
+                <small style="color: red">
+                    {{formErrors.phone2}}
+                </small>
+            </div>
+        </div>
+            <div *ngIf="loader; else notloader">
+                <button class="btn btn-primary" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                </button>
+            </div>
+            <ng-template #notloader>
+                <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary">Submit</button>
+            </ng-template>
+
+
+
+
+        </form>
+    </div>
+
+
+</div>
