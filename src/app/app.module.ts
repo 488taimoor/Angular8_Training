@@ -24,6 +24,8 @@ import { A12FormArrayComponent } from './a12-form-array/a12-form-array.component
 import { StylingPracticeComponent } from './styling-practice/styling-practice.component';
 import { FlexComponent } from './styling-practice/flex/flex.component';
 import { A13LazyLoadingModuleComponent } from './a13-lazy-loading-module/a13-lazy-loading-module.component';
+import { A14ChildViewParentComponent } from './a14-child-view-parent/a14-child-view-parent.component';
+import { A14childComponent } from './a14-child-view-parent/a14child/a14child.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,9 @@ import { A13LazyLoadingModuleComponent } from './a13-lazy-loading-module/a13-laz
     A12FormArrayComponent,
     StylingPracticeComponent,
     FlexComponent,
-    A13LazyLoadingModuleComponent
+    A13LazyLoadingModuleComponent,
+    A14ChildViewParentComponent,
+    A14childComponent,
   ],
   imports: [
     BrowserModule,
