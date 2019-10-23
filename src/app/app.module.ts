@@ -26,6 +26,10 @@ import { FlexComponent } from './styling-practice/flex/flex.component';
 import { A13LazyLoadingModuleComponent } from './a13-lazy-loading-module/a13-lazy-loading-module.component';
 import { A14ChildViewParentComponent } from './a14-child-view-parent/a14-child-view-parent.component';
 import { A14childComponent } from './a14-child-view-parent/a14child/a14child.component';
+import { A15CompleteStructureforValidationComponent } from './a15-complete-structurefor-validation/a15-complete-structurefor-validation.component';
+import { ShowErrorComponent } from './a15-complete-structurefor-validation/show-error/show-error.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PdfReaderComponent } from './pdf-reader/pdf-reader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +52,9 @@ import { A14childComponent } from './a14-child-view-parent/a14child/a14child.com
     A13LazyLoadingModuleComponent,
     A14ChildViewParentComponent,
     A14childComponent,
+    A15CompleteStructureforValidationComponent,
+    ShowErrorComponent,
+    PdfReaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +62,8 @@ import { A14childComponent } from './a14-child-view-parent/a14child/a14child.com
     HeroesModule,
     ReactiveFormsModule,
     StoreModule.forRoot({}),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    BrowserAnimationsModule
     
   ],
   providers: [],
