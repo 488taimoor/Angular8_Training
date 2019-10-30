@@ -30,6 +30,8 @@ import { A15CompleteStructureforValidationComponent } from './a15-complete-struc
 import { ShowErrorComponent } from './a15-complete-structurefor-validation/show-error/show-error.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PdfReaderComponent } from './pdf-reader/pdf-reader.component';
+import { A16CustomDirectivesComponent } from './a16-custom-directives/a16-custom-directives.component';
+import { CustomDirective } from './a16-custom-directives/custom.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +57,8 @@ import { PdfReaderComponent } from './pdf-reader/pdf-reader.component';
     A15CompleteStructureforValidationComponent,
     ShowErrorComponent,
     PdfReaderComponent,
+    A16CustomDirectivesComponent,
+    CustomDirective,
   ],
   imports: [
     BrowserModule,
