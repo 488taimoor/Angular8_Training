@@ -31,7 +31,9 @@ import { ShowErrorComponent } from './a15-complete-structurefor-validation/show-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PdfReaderComponent } from './pdf-reader/pdf-reader.component';
 import { A16CustomDirectivesComponent } from './a16-custom-directives/a16-custom-directives.component';
-import { CustomDirective } from './a16-custom-directives/custom.directive';
+import { DirectiveModuleModule } from './directive-module/directive-module.module';
+import { MultiModule } from './multi/multi.module';
+// import { CustomDirective } from './a16-custom-directives/custom.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,8 +59,7 @@ import { CustomDirective } from './a16-custom-directives/custom.directive';
     A15CompleteStructureforValidationComponent,
     ShowErrorComponent,
     PdfReaderComponent,
-    A16CustomDirectivesComponent,
-    CustomDirective,
+    // CustomDirective,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +68,9 @@ import { CustomDirective } from './a16-custom-directives/custom.directive';
     ReactiveFormsModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DirectiveModuleModule,
+    MultiModule
     
   ],
   providers: [],
