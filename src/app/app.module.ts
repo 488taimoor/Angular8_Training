@@ -33,6 +33,10 @@ import { PdfReaderComponent } from './pdf-reader/pdf-reader.component';
 import { A16CustomDirectivesComponent } from './a16-custom-directives/a16-custom-directives.component';
 import { DirectiveModuleModule } from './directive-module/directive-module.module';
 import { MultiModule } from './multi/multi.module';
+import { LifeCycleChildComponent } from './lifeCycleHooks/life-cycle-child/life-cycle-child.component';
+import { LifeCycleParentComponent } from './lifeCycleHooks/life-cycle-parent/life-cycle-parent.component';
+import { ReadExcelFileComponent } from './read-excel-file/read-excel-file.component';
+import { UploadImageComponent } from './upload-image/upload-image.component';
 // import { CustomDirective } from './a16-custom-directives/custom.directive';
 @NgModule({
   declarations: [
@@ -59,7 +63,11 @@ import { MultiModule } from './multi/multi.module';
     A15CompleteStructureforValidationComponent,
     ShowErrorComponent,
     PdfReaderComponent,
-    // CustomDirective,
+    LifeCycleChildComponent,
+    LifeCycleParentComponent,
+    ReadExcelFileComponent,
+    UploadImageComponent,
+    
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+<p>upload-image works!</p>
+<div class="form-row">
+    <div  *ngIf="imageURL?true:false" >
+      <img style="width: 200px; border: 2px solid gray;" alt="image" [src]="imageURL" >
+    </div>
+
+      <div   style="width: 100%; height: 100% ">
+          <label  style="border: 1px solid #ccc;
+          display: inline-block;
+          padding: 6px 12px;
+          cursor: pointer;">
+              <input (change)="readURL($event)" type="file" style="display: none;"/>
+              Upload image
+          </label>
+      </div>
+      
+   
+  </div>
