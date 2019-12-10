@@ -37,6 +37,10 @@ import { LifeCycleChildComponent } from './lifeCycleHooks/life-cycle-child/life-
 import { LifeCycleParentComponent } from './lifeCycleHooks/life-cycle-parent/life-cycle-parent.component';
 import { ReadExcelFileComponent } from './read-excel-file/read-excel-file.component';
 import { UploadImageComponent } from './upload-image/upload-image.component';
+import { HtmlToPDFComponent } from './html-to-pdf/html-to-pdf.component';
+import { ChartComponent } from './chart/chart.component';
+import { ChartModule } from 'angular2-chartjs';
+import 'chartjs-plugin-zoom';
 // import { CustomDirective } from './a16-custom-directives/custom.directive';
 @NgModule({
   declarations: [
@@ -67,6 +71,8 @@ import { UploadImageComponent } from './upload-image/upload-image.component';
     LifeCycleParentComponent,
     ReadExcelFileComponent,
     UploadImageComponent,
+    HtmlToPDFComponent,
+    ChartComponent,
     
   ],
   imports: [
@@ -78,7 +84,8 @@ import { UploadImageComponent } from './upload-image/upload-image.component';
     StoreDevtoolsModule.instrument(),
     BrowserAnimationsModule,
     DirectiveModuleModule,
-    MultiModule
+    MultiModule,
+    ChartModule
     
   ],
   providers: [],
